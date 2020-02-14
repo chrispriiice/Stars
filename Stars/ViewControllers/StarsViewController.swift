@@ -24,7 +24,7 @@ class StarsViewController: UIViewController {
 
     // Mark: - IBActions
     @IBAction func printStars(_ sender: UIButton) {
-        
+        print(starController.listStars())
     }
     
     @IBAction func createStar(_ sender: UIButton) {
@@ -38,7 +38,7 @@ class StarsViewController: UIViewController {
         nameTextField.text = ""
         distanceTextField.text = ""
         nameTextField.becomeFirstResponder()
-        tableView.reloadData()
+        tableView.reloadData() // This recalls all the TableView DataSource methods again. 
     }
 }
 

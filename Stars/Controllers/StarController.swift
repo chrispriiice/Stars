@@ -24,7 +24,6 @@ class StarController {
         guard let documents = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else {return nil}
         // the url looks like /Users/chrisprice/Documents
         return documents.appendingPathComponent("stars.plist")
-        
     }
     
     // Create function
@@ -34,6 +33,14 @@ class StarController {
         stars.append(star)
         saveToPersistentStore()
         return star
+    }
+    
+    func listStars() -> String {
+        var output = ""
+        for star in stars {
+            output += "\(star.name) is \(star.distanceDescription)."
+        }
+        return output
     }
     
     // Save and Load

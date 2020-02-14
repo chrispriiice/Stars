@@ -21,6 +21,6 @@ class StarTableViewCell: UITableViewCell {
     
     private func updateViews() {
         nameLabel.text = star?.name
-        distanceLabel.text = "\(star?.distance ?? 0) light years away"
+        distanceLabel.text = star?.distanceDescription
     }
 }
